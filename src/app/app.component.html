@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 [innerHTML]="title"></h1>
+
+
+  <button *ngIf="!resetState"
+          class="yes-button"
+          [ngStyle]="{'font-size.px': yesButtonSize}"
+          (click)="resetPage()">
+    Yes
+  </button>
+
+  <button *ngIf="!resetState"
+          class="right-button"
+          [ngStyle]="{'font-size.px': noButtonSize}"
+          (click)="handleRightButtonClick()">
+    {{ dynamicButtonText }}
+  </button>
+
+  <button *ngIf="resetState" class="reset-button" (click)="restart()">
+    Start Over?
+  </button>
+</div>
